@@ -1,0 +1,35 @@
+4. Restoranların, masaların və rezervasiyaların məlumatlarını idarə edən bir sistem qurmaq lazımdır.
+ - Restaurants table-ı özündə Id, Name, Location, Rating kimi dataları saxlayacaqsınız. (Constraint-ləri özünüz müəyyənləşdirin)
+ - Tables table-ı özündə Id, TableNumber, Capacity kimi dataları saxlayacaqsınız. (Constraint-ləri özünüz müəyyənləşdirin)
+ - Reservations table-ı özündə Id, CustomerName, ReservationDate, IsActive kimi dataları saxlayacaqsınız. (Constraint-ləri özünüz müəyyənləşdirin)
+ - Bu tablelər arasında relation-u özünüz qurun.
+
+4.1 Restoranlar və onların masalarının tam məlumatlarını əldə etmək üçün bir sorğu yazın.
+4.2 Yeni rezervasiya əlavə etmək üçün bir prosedur yaradın. Əgər masa artıq rezerv olunubsa, istifadəçiyə xəbərdarlıq verilsin.
+4.3 Table üçün aktiv rezervasiya sayını qaytaran funksiya yaradın.
+4.4 Bütün restoranların aktiv rezervasiyalarını göstərən bir view yaradın.
+4.5 Rezervasiya silindikdə, həmin rezervasiya qeydi CancelledReservations adlı cədvələ əlavə olunsun.
+
+INSERT INTO Restaurants (Name, Location, Rating) VALUES ('Baku Grill', 'Baku', 4.5);
+INSERT INTO Tables (RestaurantID, TableNumber, Capacity) VALUES (1, 1, 4), (1, 2, 6);
+INSERT INTO Reservations (TableID, CustomerName, ReservationDate) VALUES (1, 'Ali', '2024-11-25 19:00:00', 0);
+
+=============================================================================================================================================================================
+5. Kitablar, müəlliflər, oxucular və kitab icarəsi məlumatlarını idarə edən sistem qurmaq lazımdır. 
+ - Authors table-ı özündə Id, FullName, Birthdate, kimi dataları saxlayacaqsınız. (Constraint-ləri özünüz müəyyənləşdirin)
+ - Books table-ı özündə Id, Title, Genre, PublishYear, AvailableCopies kimi dataları saxlayacaqsınız. (Constraint-ləri özünüz müəyyənləşdirin)
+ - Readers table-ı özündə Id, FullName, RegistrationDate kimi dataları saxlayacaqsınız. (Constraint-ləri özünüz müəyyənləşdirin)
+ - Rentals table-ı özündə Id, RentDate, ReturnDate, IsReturened kimi dataları saxlayacaqsınız. (Constraint-ləri özünüz müəyyənləşdirin)
+
+5.1 Hər bir kitabın müəllifi ilə birgə məlumatlarını gətirən sorğu yazın.
+5.2 Yeni kitab icarəsi əlavə edən prosedur yaradın. Əgər kitabın mövcud nüsxəsi yoxdursa, xəbərdarlıq mesajı verilsin.
+5.3 Bir kitabın neçə dəfə icarəyə götürüldüyünü qaytaran funksiya yaradın.
+5.4 Hər bir oxucunun icarəyə götürdüyü kitabları və icarə tarixlərini göstərən bir view yaradın.
+5.5 Bir kitabın qaytarılması zamanı ReturnDate təyin edilsin və kitabın mövcud nüsxə sayı artırılsın.
+
+INSERT INTO Authors (FullName, BirthDate) VALUES ('George Orwell', '1903-06-25');
+INSERT INTO Books (Title, AuthorID, Genre, PublishYear, AvailableCopies) 
+VALUES ('1984', 1, 'Dystopian', 1949, 3);
+INSERT INTO Readers (FullName) VALUES ('Huseyn');
+
+=============================================================================================================================================================================
